@@ -248,9 +248,35 @@ section.block{padding-block:88px}
 .warr-ic{width:34px;height:34px;color:var(--lava)}
 .warr-card h3{font-size:17px;font-stretch:80%;text-transform:none;font-weight:800}
 .warr-card p{margin:0;color:var(--muted);font-size:14.5px;line-height:1.5}
+.seal-panel{display:grid;grid-template-columns:200px 1fr;gap:36px;align-items:center;background:linear-gradient(135deg,var(--night),var(--night-2));border-radius:28px;padding:36px;color:#F2F0EB;margin-top:28px}
+.seal-panel h3{color:#fff;font-size:clamp(22px,3vw,30px);text-transform:none;margin:10px 0 12px;line-height:1.15}
+.seal-panel p{margin:0 0 8px;color:rgba(242,240,235,.78);font-size:15px;line-height:1.6}
+.seal{width:100%;height:auto;filter:drop-shadow(0 14px 30px rgba(240,90,38,.35))}
+.link-btn{background:none;border:0;padding:0;color:var(--warm);font-weight:700;text-decoration:underline;cursor:pointer;font-size:inherit}
+.cond-text{font-size:13.5px!important;color:rgba(242,240,235,.6)!important;border-left:2px solid var(--lava);padding-left:12px;margin-top:10px!important}
+.seal-checks{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:11px}
+.seal-checks li{display:flex;align-items:center;gap:10px;font-weight:600;font-size:15px}
+.seal-checks svg{flex-shrink:0;color:#1F8B4C;background:rgba(31,139,76,.18);border-radius:50%;padding:2px}
+@media (max-width:760px){.seal-panel{grid-template-columns:1fr;padding:26px;text-align:left}.seal{width:150px;margin:0 auto}}
+.delivery-card{display:flex;gap:18px;align-items:center;background:linear-gradient(135deg,var(--surface-2),var(--surface));border:1px solid var(--line);border-radius:22px;padding:22px 24px;margin-bottom:28px}
+.delivery-ic{flex-shrink:0;width:52px;height:52px;border-radius:16px;background:linear-gradient(135deg,#3B8FE0,#1F5FB0);color:#fff;display:grid;place-items:center;box-shadow:0 10px 24px -8px rgba(31,95,176,.5)}
+.delivery-card h4{margin:0 0 4px;font-size:17px;font-stretch:80%;font-weight:800;text-transform:none}
+.delivery-card p{margin:0;color:var(--muted);font-size:14px}
+.pill-row{display:flex;flex-wrap:wrap;gap:8px}
+.pill{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:700;padding:6px 12px;border-radius:999px}
+.pill svg{width:14px;height:14px}
+.pill.warr{background:#E3F2E9;color:#1F8B4C}
+.pill.ship{background:#E4EEFB;color:#1F5FB0}
+:root[data-theme="dark"] .pill.warr{background:rgba(31,139,76,.2);color:#3DBF76}
+:root[data-theme="dark"] .pill.ship{background:rgba(59,143,224,.2);color:#79B4F2}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .pill.warr{background:rgba(31,139,76,.2);color:#3DBF76}:root:not([data-theme="light"]) .pill.ship{background:rgba(59,143,224,.2);color:#79B4F2}}
+.badge.new{background:linear-gradient(135deg,var(--lava),#B5330E);color:#fff}
+.added-ago{display:inline-flex;align-items:center;gap:5px;font-size:12.5px;color:var(--muted);font-weight:600}
+.added-ago svg{width:13px;height:13px}
 .stats{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .stat{padding:34px 26px;border-left:1px solid var(--line)}
 .stat:first-child{border-left:0;padding-left:0}
+.dchip small{opacity:.7;font-weight:500}
 .stat b{display:block;font-family:var(--display);font-stretch:80%;font-weight:900;font-size:clamp(34px,4vw,54px);line-height:1;letter-spacing:-.03em}
 .stat b small{font-size:.45em;font-weight:800;letter-spacing:0;margin-left:4px}
 .stat span{display:block;margin-top:10px;color:var(--muted);font-size:15px;max-width:22ch}
@@ -312,11 +338,28 @@ textarea.input{min-height:120px;resize:vertical}
 .svc input:checked + label .ic{background:linear-gradient(135deg,var(--lava),#B5330E);color:#fff;transform:scale(1.08)}
 .svc input:focus-visible + label{outline:3px solid var(--lava);outline-offset:2px}
 .svc-group{grid-column:1/-1;font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:8px}
-.daychips,.timechips{display:flex;flex-wrap:wrap;gap:8px}
-.dchip,.tchip{display:inline-flex;align-items:center;gap:6px;padding:10px 14px;border-radius:999px;border:1.5px solid var(--line);background:var(--surface);font-weight:600;font-size:13.5px;cursor:pointer;color:var(--ink);transition:all .25s var(--ease)}
-.dchip:hover,.tchip:hover{border-color:var(--lava);transform:translateY(-2px)}
-.dchip.on,.tchip.on{background:linear-gradient(135deg,var(--lava),#B5330E);border-color:transparent;color:#fff;box-shadow:0 8px 18px -6px color-mix(in srgb,var(--lava) 60%,transparent)}
-.dchip small{opacity:.7;font-weight:500}
+.live-dot{display:inline-flex;align-items:center;gap:6px;font-weight:600;color:#1F8B4C;font-size:12.5px;text-transform:none;letter-spacing:0;margin-left:8px}
+.live-dot i{width:7px;height:7px;border-radius:50%;background:#1F8B4C;box-shadow:0 0 0 0 rgba(31,139,76,.55);animation:beat 1.8s infinite}
+.cal{display:grid;gap:14px}
+.cal-days{display:flex;gap:10px;overflow-x:auto;padding-bottom:4px;scrollbar-width:thin}
+.dcard{flex:0 0 auto;min-width:84px;padding:12px 8px 11px;border-radius:16px;border:1.5px solid var(--line);background:var(--surface);text-align:center;cursor:pointer;transition:all .25s var(--ease)}
+.dcard:hover{border-color:var(--lava);transform:translateY(-2px)}
+.dcard .dw{font-size:12px;color:var(--muted);font-weight:700;text-transform:uppercase}
+.dcard .dn{font-family:var(--display);font-stretch:80%;font-weight:900;font-size:26px;line-height:1.1;margin:2px 0}
+.dcard .dc{font-size:11px;font-weight:700;color:#1F8B4C}
+.dcard .dc.full{color:var(--rosso)}
+.dcard.on{background:var(--ink);border-color:var(--ink)}
+.dcard.on .dw,.dcard.on .dn{color:#fff}
+.dcard.on .dc{color:#8CE6AE}
+.dcard.full{opacity:.5;cursor:not-allowed}
+.dcard.full:hover{transform:none;border-color:var(--line)}
+.tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.tslot{padding:12px 6px;border-radius:12px;border:1.5px solid var(--line);background:var(--surface);font-weight:700;font-size:14.5px;cursor:pointer;transition:all .2s var(--ease);color:var(--ink)}
+.tslot:hover{border-color:var(--lava);transform:translateY(-2px)}
+.tslot.on{background:linear-gradient(135deg,var(--lava),#B5330E);border-color:transparent;color:#fff;box-shadow:0 8px 18px -6px color-mix(in srgb,var(--lava) 55%,transparent)}
+.tslot.taken{opacity:.35;cursor:not-allowed;text-decoration:line-through}
+.tslot.taken:hover{transform:none;border-color:var(--line)}
+.cal-empty{grid-column:1/-1;font-size:14px;color:var(--muted)}
 
 /* ---------- Contact ---------- */
 .info{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden;margin-top:28px}
@@ -490,6 +533,7 @@ footer .logo-word{width:220px}
   <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 3L5 13.5h6L10 21l8-10.5h-6L13 3z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
   <symbol id="i-itv" viewBox="0 0 24 24"><path d="M6 3h9l4 4v14H6zM9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-more" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M8.5 12l2.3 2.3L16 9.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 7.5V12l3.2 2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
   <symbol id="i-truck" viewBox="0 0 24 24"><path d="M3 6h10v9H3zM13 10h4l4 3v2h-8z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="7.5" cy="17" r="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="17" r="1.8" fill="none" stroke="currentColor" stroke-width="1.6"/></symbol>
@@ -525,7 +569,7 @@ footer .logo-word{width:220px}
     <div class="wrap hero-in">
       <div>
         <div class="eyebrow">Taller mecánico · Chapa y pintura · Coches de ocasión</div>
-        <h1>Tu taller de confianza en el corazón de <span class="rs">Fuerteventura.</span></h1>
+        <h1>Los mejores coches de ocasión en <span class="rs">Fuerteventura,</span> con <span class="s serif">1 año de garantía.</span></h1>
         <p class="lead">Reparamos, pintamos y cuidamos tu coche como si fuera nuestro. Y si buscas coche, te ofrecemos vehículos de ocasión revisados en nuestro propio taller, listos para rodar.</p>
         <div class="hero-ctas">
           <a class="btn btn-rosso" href="#comprar" data-go="comprar">Ver coches disponibles <svg class="arr" width="18" height="18"><use href="#i-arrow"/></svg></a>
@@ -696,6 +740,10 @@ footer .logo-word{width:220px}
   <section class="block">
     <div class="wrap">
       <div class="sec-head"><div><div class="eyebrow">Comprar coche</div><h2 class="page-h">Coches <span class="serif">disponibles</span></h2><p>Todos revisados en nuestro taller y con 12 meses de garantía.</p></div></div>
+      <div class="delivery-card rv">
+        <div class="delivery-ic"><svg width="26" height="26"><use href="#i-truck"/></svg></div>
+        <div><h4>Entrega a domicilio en Fuerteventura</h4><p>Consulta con nosotros el coste y los plazos para tu zona.</p></div>
+      </div>
       <p class="count num" id="count" style="font-weight:600;margin:0 0 18px"></p>
       <div class="grid" id="cat-grid"></div>
       <div id="cat-sold-wrap" hidden style="margin-top:72px">
@@ -750,9 +798,35 @@ footer .logo-word{width:220px}
 
 <!-- ================= TALLER ================= -->
 <div class="view" id="v-taller" hidden>
-  <section class="block">
+  <section class="block" style="padding-bottom:0">
     <div class="wrap">
-      <div class="sec-head"><div><div class="eyebrow">Reservas y presupuestos</div><h2 class="page-h">¿Qué le hacemos <span class="serif">a tu coche?</span></h2><p>Marca uno o varios servicios, elige día y franja horaria, y te confirmamos la cita por WhatsApp en el momento. Trabajamos con todas las marcas.</p></div></div>
+      <div class="sec-head"><div><div class="eyebrow">Reservas y presupuestos</div><h2 class="page-h">¿Qué le hacemos <span class="serif">a tu coche?</span></h2><p>Marca uno o varios servicios, elige día y hora, y te confirmamos la cita por WhatsApp en el momento. Trabajamos con todas las marcas.</p></div></div>
+      <div class="seal-panel rv">
+        <svg class="seal" viewBox="0 0 200 200" aria-hidden="true">
+          <defs><path id="seal-arc" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs>
+          <circle cx="100" cy="100" r="92" fill="none" stroke="rgba(255,255,255,.14)" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="78" fill="url(#seal-grad)"/>
+          <defs><radialGradient id="seal-grad" cx="35%" cy="30%" r="80%"><stop offset="0%" stop-color="#F05A26"/><stop offset="100%" stop-color="#B5330E"/></radialGradient></defs>
+          <text font-size="11" font-weight="700" letter-spacing="2.4" fill="#F2F0EB"><textPath href="#seal-arc" startOffset="0%">GARANTÍA DE PLAZO · VOLCANO CARS · GARANTÍA DE PLAZO · VOLCANO CARS ·</textPath></text>
+          <text x="100" y="98" text-anchor="middle" font-family="Archivo" font-stretch="80%" font-weight="900" font-size="44" fill="#fff">10%</text>
+          <text x="100" y="126" text-anchor="middle" font-weight="700" font-size="13" letter-spacing="1.5" fill="#FBD9C8">POR DÍA</text>
+        </svg>
+        <div>
+          <div class="eyebrow" style="color:#F2F0EB">Compromiso Volcano Cars</div>
+          <h3>Tu coche listo a tiempo, o te devolvemos parte del dinero.</h3>
+          <p>Si no está listo el día acordado, te descontamos el 10&nbsp;% de la mano de obra por cada día de retraso, hasta el 50&nbsp;%. <button type="button" class="link-btn" id="cond-toggle">Ver condiciones</button></p>
+          <p class="cond-text" id="cond-text" hidden>Aplica a reparaciones con presupuesto firmado por el cliente y fecha de entrega pactada por escrito. No cubre retrasos por piezas en pedido especial, causas de fuerza mayor o averías nuevas que aparezcan durante la reparación.</p>
+          <ul class="seal-checks">
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Fecha de entrega por escrito</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>Presupuesto antes de tocar nada</li>
+            <li><svg width="18" height="18"><use href="#i-check"/></svg>3 meses o 2.000&nbsp;km de garantía en la reparación</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="block" style="padding-top:40px">
+    <div class="wrap">
       <form id="shop-form" class="split shop">
         <div class="services" id="services"></div>
         <div class="panel">
@@ -766,17 +840,11 @@ footer .logo-word{width:220px}
             <div class="field"><label for="t-name">Tu nombre</label><input class="input" id="t-name" required autocomplete="name"></div>
             <div class="field"><label for="t-phone">Teléfono</label><input class="input" id="t-phone" type="tel" required autocomplete="tel"></div>
           </div>
-          <div class="field"><label>Día preferido (opcional)</label>
-            <div class="daychips" id="daychips"></div>
-            <input class="input" id="t-date" type="date" style="margin-top:8px">
+          <div class="field"><label>Elige día y hora <span class="live-dot"><i></i>Horas libres de este dispositivo</span></label>
+            <div class="cal" id="taller-cal" data-cal="taller"></div>
+            <p class="note" style="margin-top:2px">Toca un día y después una hora.</p>
           </div>
-          <div class="field"><label>Franja horaria</label>
-            <div class="timechips" id="timechips">
-              <button type="button" class="tchip" data-t="Por la mañana (8:00–12:00)"><svg width="16" height="16"><use href="#i-clock"/></svg>Mañana</button>
-              <button type="button" class="tchip" data-t="A mediodía (12:00–14:00)"><svg width="16" height="16"><use href="#i-clock"/></svg>Mediodía</button>
-              <button type="button" class="tchip" data-t="Por la tarde (14:00–16:00)"><svg width="16" height="16"><use href="#i-clock"/></svg>Tarde</button>
-            </div>
-          </div>
+          <input type="hidden" id="t-date"><input type="hidden" id="t-time">
           <button class="btn btn-rosso" type="submit" style="width:100%">Reservar cita <svg class="arr" width="18" height="18"><use href="#i-arrow"/></svg></button>
           <p class="note" id="t-sel">Ningún servicio marcado todavía.</p>
           <p class="note">Atendemos de lunes a viernes, de 8:00 a 16:00 en horario continuado.</p>
@@ -852,6 +920,12 @@ footer .logo-word{width:220px}
       <div class="m-actions">
         <a class="btn btn-wa" id="m-wa" target="_blank" rel="noopener"><svg width="18" height="18"><use href="#i-wa"/></svg>Me interesa este coche</a>
         <a class="btn btn-ghost" id="m-call"><svg width="18" height="18"><use href="#i-phone"/></svg>Llamar</a>
+        <button class="btn btn-ink" id="m-visit-toggle" type="button"><svg width="18" height="18"><use href="#i-clock"/></svg>Reservar una visita</button>
+      </div>
+      <div id="m-visit" hidden>
+        <label style="font-size:13.5px;font-weight:600;color:var(--muted)">Elige día y hora <span class="live-dot"><i></i>Horas libres de este dispositivo</span></label>
+        <div class="cal" id="m-cal" style="margin-top:8px"></div>
+        <button class="btn btn-rosso" id="m-visit-confirm" type="button" style="width:100%;margin-top:14px" disabled>Confirmar visita <svg class="arr" width="18" height="18"><use href="#i-arrow"/></svg></button>
       </div>
     </div>
   </div>
@@ -948,16 +1022,32 @@ function soldCard(c){
       <div class="price-row num"><div class="price" style="color:var(--muted)">${eur(c.precio)}</div><div class="month">Vendido${en?" "+en:""}</div></div>
     </div></div>`;
 }
+function haceTiempo(iso){
+  if(!iso) return "";
+  const d=(Date.now()-Date.parse(iso))/864e5;
+  if(!isFinite(d)||d<0) return "";
+  if(d<1) return "Añadido hoy";
+  if(d<2) return "Añadido ayer";
+  if(d<7) return `Añadido hace ${Math.floor(d)} días`;
+  if(d<30) return `Añadido hace ${Math.floor(d/7)} semanas`;
+  return "";
+}
 function card(c){
   const pic = c.fotos && c.fotos.length ? imgTag(FOTO(c.fotos[0]), c.marca+" "+c.modelo) : SILUETA;
   const nf = c.fotos && c.fotos.length > 1 ? `<span class="badge cnt" style="position:absolute;z-index:2;right:12px;bottom:12px">${c.fotos.length} fotos</span>` : "";
+  const esNuevo = (Date.now()-Date.parse(c.creado||0))/864e5 < 14;
+  const ago = haceTiempo(c.creado);
+  const meta = (esNuevo||ago) ? `<div class="specs" style="align-items:center;gap:10px">${esNuevo?'<span class="badge new" style="position:static">Nuevo</span>':""}${ago?`<span class="added-ago"><svg><use href="#i-clock"/></svg>${ago}</span>`:""}</div>` : "";
+  const pills = c.estado!=="reservado" ? `<div class="pill-row"><span class="pill warr"><svg><use href="#i-shield"/></svg>1 año de garantía</span><span class="pill ship"><svg><use href="#i-truck"/></svg>Entrega gratis</span></div>` : "";
   return `<button class="car" type="button" data-id="${esc(c.id)}" aria-label="Ver ${esc(c.marca+" "+c.modelo)}">
     <div class="car-img">${pic}${badges(c)}${nf}</div>
     <div class="car-body">
       <div><div class="car-title">${esc(c.marca)} ${esc(c.modelo)}</div><div class="car-ver">${esc(c.version)}</div></div>
       <div class="specs num"><span class="chip">${esc(c.anio)}</span><span class="chip">${km(c.km)}</span>${c.combustible?`<span class="chip">${esc(c.combustible)}</span>`:""}${c.cambio?`<span class="chip">${esc(c.cambio)}</span>`:""}</div>
+      ${meta}
+      ${pills}
       ${demanda(c)}
-      <div class="price-row num"><div class="price">${eur(c.precio)}</div><div class="month">Precio al contado</div></div>
+      <div class="price-row num"><div class="price">${eur(c.precio)}</div><div class="month">Precio final · impuestos incl.</div></div>
     </div></button>`;
 }
 const vacio = `<div class="empty" style="grid-column:1/-1"><b style="color:var(--ink)">Estamos preparando nuevos coches.</b><br>Escríbenos por <a href="${wa("Hola Volcano Cars, busco un coche: ")}" target="_blank" rel="noopener">WhatsApp</a> y te avisamos en cuanto entre uno que encaje contigo.</div>`;
@@ -1045,7 +1135,23 @@ document.addEventListener("click",e=>{
   const dm=demanda(c,"m-demand"); $("#m-demand").hidden=!dm; if(dm) $("#m-demand").innerHTML=dm.replace(/^<div[^>]*>|<\/div>$/g,"");
   $("#m-wa").href=wa(`Hola, me interesa el ${c.marca} ${c.modelo} ${c.version||""} (${c.anio}, ${km(c.km)}) de ${eur(c.precio)}. ¿Sigue disponible?`);
   $("#m-call").href=tel;
+  $("#m-visit").hidden=true; if(mCal) mCal.reset();
   modal.showModal(); modal.scrollTop=0;
+});
+let mCal=null;
+$("#cond-toggle").addEventListener("click",()=>{ const t=$("#cond-text"); t.hidden=!t.hidden; $("#cond-toggle").textContent = t.hidden?"Ver condiciones":"Ocultar condiciones"; });
+$("#m-visit-toggle").addEventListener("click",()=>{
+  const open = $("#m-visit").hidden;
+  $("#m-visit").hidden=!open;
+  if(open && !mCal) mCal = initCalendar("m-cal", (iso,hora)=>{ $("#m-visit-confirm").disabled=false; $("#m-visit-confirm").dataset.iso=iso; $("#m-visit-confirm").dataset.hora=hora; });
+});
+$("#m-visit-confirm").addEventListener("click", function(){
+  const c=gal.c; const fecha=new Date(this.dataset.iso+"T00:00:00");
+  const fechaTxt=fecha.toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"});
+  const t=`Hola Volcano Cars, quiero reservar una visita para ver el ${c.marca} ${c.modelo} ${c.version||""} el ${fechaTxt} a las ${this.dataset.hora}.`;
+  guardarReserva(this.dataset.iso, this.dataset.hora);
+  window.open(wa(t),"_blank","noopener");
+  mCal.reset(); this.disabled=true; $("#m-visit").hidden=true;
 });
 $("#m-wa").addEventListener("click",()=>apuntarInteres(gal.c));
 $("#m-prev").onclick=()=>showFoto(gal.i-1);
@@ -1061,37 +1167,71 @@ modal.addEventListener("click",e=>{ if(e.target===modal) modal.close(); });
 $("#services").innerHTML=SERVICIOS.map(s=>`<div class="svc"><input type="checkbox" id="sv-${s.k}" value="${s.n}"><label for="sv-${s.k}"><span class="ic"><svg width="20" height="20"><use href="#i-${s.i}"/></svg></span><span><b>${s.n}</b><small>${s.d}</small></span></label></div>`).join("");
 const picked=()=>[...document.querySelectorAll("#services input:checked")].map(i=>i.value);
 $("#services").addEventListener("change",()=>{ const p=picked(); $("#t-sel").textContent=p.length?"Servicios: "+p.join(", "):"Ningún servicio marcado todavía."; });
-const DIAS=["Domingo","Lunes","Martes","Miércoles","Jueves","Viernes","Sábado"];
-function buildDayChips(){
-  const wrap=$("#daychips"); const hoy=new Date(); const chips=[];
-  for(let i=1;i<=5;i++){
+/* ---------- Calendario de citas ----------
+   No hay backend con agenda compartida entre clientes: los huecos que se
+   marcan como ocupados se guardan en este dispositivo/navegador (localStorage),
+   para que un mismo cliente no se agende dos veces encima y vea su propia
+   cita reflejada al volver. No sincroniza en tiempo real entre visitantes. */
+const DIAS_L=["Dom","Lun","Mar","Mié","Jue","Vie","Sáb"];
+const HORAS=["08:00","09:00","10:00","11:00","12:00","13:00","14:00","15:00"];
+function reservasGuardadas(){ try{ return JSON.parse(localStorage.getItem("vc_citas")||"{}"); }catch(_){ return {}; } }
+function guardarReserva(iso,hora){
+  const r=reservasGuardadas(); r[iso]=r[iso]||[]; if(!r[iso].includes(hora)) r[iso].push(hora);
+  try{ localStorage.setItem("vc_citas", JSON.stringify(r)); }catch(_){}
+}
+function horasLibres(iso){
+  const hoy=new Date(), esHoy = iso===hoy.toISOString().slice(0,10);
+  const ocupadas=(reservasGuardadas()[iso]||[]);
+  return HORAS.filter(h=>{
+    if(ocupadas.includes(h)) return false;
+    if(esHoy){ const hh=+h.split(":")[0]; if(hh<=hoy.getHours()) return false; }
+    return true;
+  });
+}
+function proximosDias(n){
+  const hoy=new Date(); const out=[];
+  for(let i=0;out.length<n && i<21;i++){
     const d=new Date(hoy); d.setDate(hoy.getDate()+i);
     if(d.getDay()===0||d.getDay()===6) continue;
-    const label = i===1?"Mañana":DIAS[d.getDay()];
-    const iso = d.toISOString().slice(0,10);
-    chips.push(`<button type="button" class="dchip" data-iso="${iso}">${label} <small>${d.getDate()}/${d.getMonth()+1}</small></button>`);
-    if(chips.length>=4) break;
+    out.push(d);
   }
-  wrap.innerHTML=chips.join("");
+  return out;
 }
-buildDayChips();
-let horaSel="";
-$("#daychips").addEventListener("click",e=>{
-  const b=e.target.closest(".dchip"); if(!b) return;
-  [...$("#daychips").children].forEach(c=>c.classList.remove("on"));
-  b.classList.add("on"); $("#t-date").value=b.dataset.iso;
-});
-$("#t-date").addEventListener("change",()=>{ [...$("#daychips").children].forEach(c=>c.classList.toggle("on", c.dataset.iso===$("#t-date").value)); });
-$("#timechips").addEventListener("click",e=>{
-  const b=e.target.closest(".tchip"); if(!b) return;
-  [...$("#timechips").children].forEach(c=>c.classList.remove("on"));
-  b.classList.add("on"); horaSel=b.dataset.t;
-});
+function initCalendar(rootId, onPick){
+  const root=$("#"+rootId); if(!root) return;
+  const dias=proximosDias(6);
+  let sel={iso:null,hora:null};
+  function paint(){
+    const days=dias.map(d=>{
+      const iso=d.toISOString().slice(0,10); const libres=horasLibres(iso).length;
+      const full = libres===0;
+      return `<button type="button" class="dcard${sel.iso===iso?" on":""}${full?" full":""}" data-iso="${iso}" ${full?"disabled":""}>
+        <div class="dw">${DIAS_L[d.getDay()]}</div><div class="dn">${d.getDate()}</div>
+        <div class="dc${full?" full":""}">${full?"Completo":libres+" horas"}</div></button>`;
+    }).join("");
+    const horasHtml = sel.iso ? horasLibres(sel.iso).map(h=>`<button type="button" class="tslot${sel.hora===h?" on":""}" data-h="${h}">${h}</button>`).join("") || '<p class="cal-empty">No quedan horas libres ese día.</p>' : '<p class="cal-empty">Elige primero un día.</p>';
+    root.innerHTML = `<div class="cal-days">${days}</div><div class="tgrid">${horasHtml}</div>`;
+  }
+  paint();
+  root.addEventListener("click", e=>{
+    const dc=e.target.closest(".dcard");
+    if(dc && !dc.disabled){ sel={iso:dc.dataset.iso, hora:null}; paint(); return; }
+    const ts=e.target.closest(".tslot");
+    if(ts){ sel.hora=ts.dataset.h; paint(); onPick && onPick(sel.iso, sel.hora); }
+  });
+  return { get(){ return sel; }, reset(){ sel={iso:null,hora:null}; paint(); } };
+}
+const tallerCal = initCalendar("taller-cal", (iso,hora)=>{ $("#t-date").value=iso; $("#t-time").value=hora; });
 $("#shop-form").addEventListener("submit",e=>{
   e.preventDefault();
   const p=picked();
-  const t=`Hola Volcano Cars, quiero reservar una cita en el taller.\n\nCoche: ${$("#t-car").value}${$("#t-plate").value?" ("+$("#t-plate").value+")":""}\nServicios: ${p.length?p.join(", "):"sin especificar"}\n${$("#t-msg").value?"Detalles: "+$("#t-msg").value+"\n":""}${$("#t-date").value?"Día preferido: "+$("#t-date").value+"\n":""}${horaSel?"Franja horaria: "+horaSel+"\n":""}\nNombre: ${$("#t-name").value}\nTeléfono: ${$("#t-phone").value}`;
+  if(!$("#t-date").value || !$("#t-time").value){ alert("Elige un día y una hora para la cita."); return; }
+  const fecha = new Date($("#t-date").value+"T00:00:00");
+  const fechaTxt = fecha.toLocaleDateString("es-ES",{weekday:"long",day:"numeric",month:"long"});
+  const t=`Hola Volcano Cars, quiero reservar una cita en el taller.\n\nCoche: ${$("#t-car").value}${$("#t-plate").value?" ("+$("#t-plate").value+")":""}\nServicios: ${p.length?p.join(", "):"sin especificar"}\n${$("#t-msg").value?"Detalles: "+$("#t-msg").value+"\n":""}Día y hora: ${fechaTxt} a las ${$("#t-time").value}\nNombre: ${$("#t-name").value}\nTeléfono: ${$("#t-phone").value}`;
+  guardarReserva($("#t-date").value, $("#t-time").value);
   window.open(wa(t),"_blank","noopener"); $("#shop-ok").hidden=false;
+  tallerCal.reset();
 });
 
 /* vender */
